@@ -43,7 +43,7 @@
     </nav>
     <!-- /.navbar -->
 
-    @include('admin.include.sidebar')
+    @include('admin.includes.sidebar')
     @yield('content')
 
     <!-- Control Sidebar -->
