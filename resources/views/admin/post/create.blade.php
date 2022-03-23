@@ -24,15 +24,23 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <form action="{{ route('admin.post.store') }}" method="POST" class="col-4">
+                    <form action="{{ route('admin.post.store') }}" method="POST">
                         @csrf
-                        <div class="form-group">
-                            <input type="text" name="title" class="form-control" placeholder="Название">
+                        <div class="form-group w-25 ml-2">
+                            <input type="text" name="title" class="form-control" placeholder="Название" value="{{ old('title') }}">
                             @error('title')
-                                <div class="text-danger">Это поле необходимо для заполнения</div>
+                            <div class="text-danger">Это поле необходимо для заполнения</div>
                             @enderror
                         </div>
-                        <input type="submit" class="btn btn-block btn-primary mt-2" value="Добавить">
+                        <div class="form-group ml-2">
+                            <textarea id="summernote" name="content">{{ old('content') }}</textarea>
+                            @error('content')
+                            <div class="text-danger">Это поле необходимо для заполнения</div>
+                            @enderror
+                        </div>
+                        <div class="form-group w-25 ml-2">
+                            <input type="submit" class="btn btn-block btn-primary mt-2" value="Добавить">
+                        </div>
                     </form>
                 </div>
                 <!-- /.row -->

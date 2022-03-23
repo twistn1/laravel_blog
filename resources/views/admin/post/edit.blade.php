@@ -24,12 +24,12 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <form action="{{ route('admin.post.update', $posts->id) }}" method="POST" class="col-4">
+                    <form action="{{ route('admin.post.update', $post->id) }}" method="POST" class="col-4">
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
                             <input type="text" name="title" class="form-control" placeholder="Название"
-                                   value="{{ $posts->title }}">
+                                   value="{{ $post->title }}">
                             @error('title')
                             <div class="text-danger">Это поле необходимо для заполнения</div>
                             @enderror
