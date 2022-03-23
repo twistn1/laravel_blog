@@ -5,9 +5,8 @@
 
         <ul class="pt-3 nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-                <a href="#" class="nav-link">
-
-                    <p>
+                <a href="{{ route('admin.category.index') }}" class="nav-link"><i class="fas fa-list-alt"></i>
+                    <p class="ml-2">
                         Категории
                     </p>
                 </a>
