@@ -24,10 +24,11 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <form action="{{ route('admin.post.store') }}" method="POST">
+                    <form action="{{ route('admin.post.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group w-25 ml-2">
-                            <input type="text" name="title" class="form-control" placeholder="Название" value="{{ old('title') }}">
+                            <input type="text" name="title" class="form-control" placeholder="Название"
+                                   value="{{ old('title') }}">
                             @error('title')
                             <div class="text-danger">Это поле необходимо для заполнения</div>
                             @enderror
@@ -37,6 +38,30 @@
                             @error('content')
                             <div class="text-danger">Это поле необходимо для заполнения</div>
                             @enderror
+                        </div>
+                        <div class="form-group w-75 ml-2">
+                            <label for="exampleInputFile">Добавить превью</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="preview_image">
+                                    <label class="custom-file-label">Выберите файл</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Загрузить</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group w-75 ml-2">
+                            <label for="exampleInputFile">Добавить главное изображение</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="main_image">
+                                    <label class="custom-file-label">Выберите файл</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Загрузить</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group w-25 ml-2">
                             <input type="submit" class="btn btn-block btn-primary mt-2" value="Добавить">
