@@ -27,9 +27,21 @@
                     <form action="{{ route('admin.user.store') }}" method="POST" class="col-4">
                         @csrf
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Название">
+                            <input type="text" name="name" class="form-control" placeholder="Имя пользователя">
                             @error('name')
-                                <div class="text-danger">Это поле необходимо для заполнения</div>
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Ваша почта">
+                            @error('email')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="password" class="form-control" placeholder="Пароль">
+                            @error('password')
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <input type="submit" class="btn btn-block btn-primary mt-2" value="Добавить">
