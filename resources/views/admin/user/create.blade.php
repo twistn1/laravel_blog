@@ -29,7 +29,7 @@
                         <div class="form-group">
                             <input type="text" name="name" class="form-control" placeholder="Имя пользователя">
                             @error('name')
-                                <div class="text-danger">{{ $message }}</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group">
@@ -44,7 +44,20 @@
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <input type="submit" class="btn btn-block btn-primary mt-2" value="Добавить">
+                        <div class="form-group">
+                            <label>Выберите роль</label>
+                            <select name="role" class="form-control w-75">
+                                @foreach($roles as $id => $role)
+                                    <option value="{{ $id }}"
+                                        {{ $id == old('role_id') ? ' selected': '' }}>{{ $role }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('role')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <input type="submit" class="btn btn-block btn-primary mt-2 w-50" value="Добавить">
                     </form>
                 </div>
                 <!-- /.row -->

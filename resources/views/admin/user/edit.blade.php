@@ -41,6 +41,9 @@
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
+                        <div class="form-group ml-2">
+                            <input type="hidden" name="user_id" value="{{ $user->id }}">
+                        </div>
                         <input type="submit" class="btn btn-block btn-primary mt-2" value="Обновить">
                     </form>
                 </div>
